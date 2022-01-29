@@ -28,3 +28,18 @@ This repository is used by [Shopify CLI](https://github.com/Shopify/shopify-cli)
 ## License
 
 This repository is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+
+SHOPIFY_API_KEY=5362ba4fe7c1c30190e0f295b1c73be9
+SHOPIFY_API_SECRET=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
+SHOP=parquepanaca.myshopify.com
+SCOPES=write_products,write_customers,write_draft_orders
+HOST=https://acbc-45-162-78-91.ngrok.io
+
+
+SHOPIFY_API_KEY=5362ba4fe7c1c30190e0f295b1c73be9
+SHOPIFY_API_SECRET=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
+EXTENSION_TITLE=theme-app-extension
+EXTENSION_ID=4117715
+EXTENSION_UUID=45419d2a-371c-4500-a210-74b3d728c08b
+

@@ -1,0 +1,79 @@
+<div class="spaced-section container" data-cc-animate>
+
+  {% assign collection = collections['panaca'] %}
+  <script>
+    let URLactual = window.location;
+    let URL = URLactual.toString();
+    let indiceFecha = URL.lastIndexOf("?date=") + 6;
+    let indiceExpe = URL.lastIndexOf("?exp=") + 5;
+    let indiceAdul = URL.lastIndexOf("?adul=") + 6;
+    let indiceNino = URL.lastIndexOf("?kids=") + 6;
+    let fecha = URL.slice(indiceFecha, indiceFecha + 10);
+    fecha = fecha.replace("-", "/");
+    let experiencia = URL.slice(indiceExpe, indiceAdul - 6);
+    let adultos = URL.slice(indiceAdul, indiceNino - 6);
+    let ninos = URL.slice(indiceNino, URL.length);
+
+    const productosColeccion = [{{ collection.products | json }}];
+
+    productosColeccion.forEach(function(productoPropiedades) {
+      productoPropiedades.forEach(function(productoPropiedad) {
+
+        if(productoPropiedad.price === 800){
+
+        }
+
+      });
+    });
+  </script>
+</div>
+</script>
+</div>
+
+<script>
+
+</script>
+{% schema %}
+{
+"name": "resultadoCotizador",
+"target": "section",
+"stylesheet": "image-gallery.css",
+"javascript": "cotizador.js",
+"templates": ["product", "index", "page"],
+"settings": [
+{
+"type": "text",
+"id": "heading",
+"label": "Heading",
+"default": "Resultado Cotizador"
+},
+{
+"type": "text",
+"id": "description",
+"label": "Description",
+"default": "Resultado del Cotizador"
+},
+{
+"type": "image_picker",
+"id": "image_1",
+"label": "Image 1"
+},
+{
+"type": "image_picker",
+"id": "image_2",
+"label": "Image 2"
+},
+{
+"type": "image_picker",
+"id": "image_3",
+"label": "Image 3"
+},
+{
+"type": "image_picker",
+"id": "image_4",
+"label": "Image 4"
+}
+]
+}
+{% endschema %}
+

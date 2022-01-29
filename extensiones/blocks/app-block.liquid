@@ -1,0 +1,111 @@
+<div class="spaced-section container" data-cc-animate>
+  <div class=" contenedor align-middle">
+    <form action="">
+      <div class="row">
+        <div class="col-12 col-md-3 col-lg-2 titulo fw-bold ">
+          PLANEA TU VISITA
+        </div>
+        <div class="col-12 col-md-2 col-lg-2">
+          <input onchange="obtenerFecha(this.value)" type="text" id="datepicker" class="form-select fecha"
+                 placeholder="Fecha" required>
+        </div>
+        <div class="col-12 col-md-2 col-lg-2">
+          <select onchange="obtenerExp(this.value)" class="form-control opciones" required>
+            <option selected>Experiencia</option>
+            <option value="diversion">Diversión</option>
+            <option value="adrenalina">Adrenalina</option>
+            <option value="espectaculo">Espectáculo</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-2 col-lg-2">
+          <input onchange="obtenerAdul(this.value)" type="number" class="form-select cantidad" placeholder="Adultos"
+                 required>
+        </div>
+        <div class="col-12 col-md-2 col-lg-2">
+          <input onchange="obtenerNinos(this.value)" type="number" class="form-select cantidad" placeholder="Niños"
+                 required>
+        </div>
+        <div class="col-12 col-md-1 col-lg-2 boton">
+          <button onclick="obtenerURL()" type="button" class="boton1">COMPRAR</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+<script>
+
+  let fecha;
+  let experiencia;
+  let adultos;
+  let ninos;
+
+  function obtenerFecha(val) {
+    fecha = val.replace("/", "-");
+    fecha = fecha.replace("/", "-");
+  }
+
+  function obtenerExp(val) {
+    experiencia = val;
+  }
+
+  function obtenerAdul(val) {
+    adultos = val;
+  }
+
+  function obtenerNinos(val) {
+    ninos = val;
+  }
+
+  function obtenerURL() {
+    let url = `https://parquepanaca.myshopify.com/pages/cotizador-experiencia?date=${fecha}?exp=${experiencia}?adul=${adultos}?kids=${ninos}`;
+    window.location.href = url;
+
+  }
+
+</script>
+
+{% schema %}
+{
+"name": "cotizador",
+"target": "section",
+"stylesheet": "image-gallery.css",
+"javascript": "image-gallery.js",
+"templates": ["product", "index", "page"],
+"settings": [
+{
+"type": "text",
+"id": "heading",
+"label": "Heading",
+"default": "Cotizador"
+},
+{
+"type": "text",
+"id": "description",
+"label": "Description",
+"default": "Cotizador de pasaportes"
+},
+{
+"type": "image_picker",
+"id": "image_1",
+"label": "Image 1"
+},
+{
+"type": "image_picker",
+"id": "image_2",
+"label": "Image 2"
+},
+{
+"type": "image_picker",
+"id": "image_3",
+"label": "Image 3"
+},
+{
+"type": "image_picker",
+"id": "image_4",
+"label": "Image 4"
+}
+]
+}
+{% endschema %}
